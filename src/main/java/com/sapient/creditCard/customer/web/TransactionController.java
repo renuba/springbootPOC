@@ -115,10 +115,9 @@ public class TransactionController {
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value="/creditCard/customer", produces = "application/json", consumes="application/json")
-//	@ResponseStatus(HttpStatus.CREATED)
+
 	public ResponseVO createCustomer(@RequestBody @Valid CustomerEntity application){
-		//LOGGER.info("Method called with input - {}", application);
-		CustomerEntity customerEntity = custservice.createCustomer(application);
+				CustomerEntity customerEntity = custservice.createCustomer(application);
 		ResponseVO responseVO = new ResponseVO();
 		if(customerEntity != null){
 			CustomerResponse responseDTO = mapper.map(customerEntity, CustomerResponse.class);
@@ -140,7 +139,6 @@ public class TransactionController {
 	@RequestMapping(method = RequestMethod.GET, value="/creditCard/customer/{customerId}", produces="application/json")
 	public ResponseVO getCustomer(@PathVariable Integer customerId){
 
-		//LOGGER.info("appRefNumber - {}", customerId);
 		CustomerEntity customerEntity = custservice.getCustomerById(customerId);
 
 		ResponseVO responseVO = new ResponseVO();
