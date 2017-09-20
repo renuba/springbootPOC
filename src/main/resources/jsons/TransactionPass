@@ -1,0 +1,7 @@
+{
+			"merchantName":  "merchant1",
+			"custId": 1,
+			"transValue": 21,
+			"transType":  "transType",
+			"transdate":  "12-12-1985"
+}
